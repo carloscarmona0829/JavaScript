@@ -1,4 +1,4 @@
-import { contarCoincidencias, eliminarPatron, invertirTexto, palindromo } from "./clase 35.js";
+import { contarCoincidencias, eliminarPatron, invertirTexto, palindromo } from "./clase35.js";
 import { PI, contarCadena, contarCaracteres, recortarCadena, convertirEnArreglo, repetirCadena, cortarTexto, cadenaAArreglo, repetirTexto } from "./clase34.js";
 
 //Ejercicios Clase 34
