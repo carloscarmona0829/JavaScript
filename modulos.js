@@ -1,5 +1,20 @@
-import { contarCoincidencias, eliminarPatron, invertirTexto, palindromo } from "./clase35.js";
-import { PI, contarCadena, contarCaracteres, recortarCadena, convertirEnArreglo, repetirCadena, cortarTexto, cadenaAArreglo, repetirTexto } from "./clase34.js";
+import {
+  contarCoincidencias,
+  eliminarPatron,
+  invertirTexto,
+  palindromo,
+} from "./clase35.js";
+import {
+  PI,
+  contarCadena,
+  contarCaracteres,
+  recortarCadena,
+  convertirEnArreglo,
+  repetirCadena,
+  cortarTexto,
+  cadenaAArreglo,
+  repetirTexto,
+} from "./clase34.js";
 import { aleatorio, capicua, factorial } from "./clase36.js";
 import { convertirgrados, par, primo } from "./clase37.js";
 
@@ -50,6 +65,7 @@ primo(13);
 par();
 par(7);
 convertirgrados();
-convertirgrados(100,"Otro");
-convertirgrados(200,"C");
-convertirgrados(100,"F");
+convertirgrados(100);
+convertirgrados(200, "C");
+convertirgrados(100, "F");
+convertirgrados(100, "E");
