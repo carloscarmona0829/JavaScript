@@ -36,16 +36,16 @@ export const convertirgrados = (temperatura = undefined, tipo = "") => {
       "Debe ingresar C para grados celsios o F para Fahrenheits"
     );
 
-  let celsius = temperatura * 0.5556 - 32;
-  let fahrenheits = temperatura * 1.8 + 32;
+  let celsius = Math.round(temperatura * 0.5556 - 32);
+  let fahrenheits = Math.round(temperatura * 1.8 + 32);
 
   if (tipo === "C") {
     return console.log(
-      `${temperatura} celsios equivalen a ${fahrenheits} Fahrenheits`
+      `${temperatura} °C = ${Math.round(temperatura * 1.8 + 32)} °F`
     );
   } else if (tipo === "F") {
     return console.log(
-      `${temperatura} fahrenheits equivalen a ${celsius} celsius`
+      `${temperatura} °F = ${Math.round(temperatura * 0.5556 - 32)} °C`
     );
   } else {
     return console.log("Solo se adminte el valor 'C' o 'F'");

@@ -60,12 +60,16 @@ factorial(4);
 */
 
 //Ejercicios Clase 37
+/*
 primo();
 primo(13);
 par();
 par(7);
 convertirgrados();
 convertirgrados(100);
-convertirgrados(200, "C");
+convertirgrados(0, "C");
+convertirgrados(100, "C");
 convertirgrados(100, "F");
-convertirgrados(100, "E");
+*/
+//Ejercicios Clase 38 ya había resuelto algo parecido entonces no los hice
+//Ejercicios Clase 39
