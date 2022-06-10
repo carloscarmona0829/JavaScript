@@ -17,6 +17,7 @@ import {
 } from "./clase34.js";
 import { aleatorio, capicua, factorial } from "./clase36.js";
 import { convertirgrados, par, primo } from "./clase37.js";
+import { Pelicula } from "./clase43.js";
 
 //Ejercicios Clase 34
 /*
@@ -71,5 +72,14 @@ convertirgrados(0, "C");
 convertirgrados(100, "C");
 convertirgrados(100, "F");
 */
-//Ejercicios Clase 38 ya había resuelto algo parecido entonces no los hice
-//Ejercicios Clase 39
+
+//Ejercicios Clase 38,39,40,41,42 ya había resuelto algo parecido entonces no los hice
+
+//Ejercicios Clase 43
+const peli= new Pelicula({
+  id:"tt1234567",
+  titulo:"Advengers End Game",
+  director:"Anthony y Joe Russo",
+  estreno:2019
+});
+
