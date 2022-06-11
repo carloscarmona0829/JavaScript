@@ -38,7 +38,22 @@ export class Pelicula {
         this.validarTitulo(titulo);
         this.validarDirector(director);
         this.validarEstreno(estreno);
+        this.validarPais(pais);
+        this.validarGeneros(generos);
+        this.validarCalificacion(calificacion);
     }
+
+    static get listarGeneros() {
+        return ["Action", "Adult", "Adventure", "Animation", "Biography", "Comedy", "Crime", "Documentary",
+            "Drama", "Family", "Fantasy", "Film Noir", "Game-Show", "History", "Horror", "Musical", "Music",
+            "Mystery", "News", "Reality-TV", "Romance", "Sci-Fi", "Short", "Sport", "Talk-Show", "Thriller",
+            "War", "Western"];
+    }
+
+    static generosAceptados() {
+        return console.info(`Los Géneros aceptados son: ${Pelicula.listarGeneros.join(", ")}`);
+    }
+
     validarCadena(propiedad, valor) {
         if (!valor) return console.warn(`${propiedad} "${valor}" esta vacío`);
 
@@ -47,7 +62,7 @@ export class Pelicula {
         return true;
     }
 
-    validarNumero(propiedad, valor){
+    validarNumero(propiedad, valor) {
         if (!valor) return console.warn(`${propiedad} "${valor}" esta vacío`);
 
         if (typeof valor !== "number") return console.error(`${propiedad} '${valor}' ingresado, NO es un número`);
@@ -58,6 +73,22 @@ export class Pelicula {
     validarLongitudCadena(propiedad, valor, longitud) {
         if (valor.length > longitud) return console.error(`${propiedad}, "${valor}", excede el número de 
         caracteres permitidos (${longitud}).`);
+
+        return true;
+    }
+
+    validarArreglo(propiedad, valor) {
+        if (!valor) return console.warn(`${propiedad} "${valor}" esta vacío`);
+
+        if (!(valor instanceof Array)) return console.error(`${propiedad} "${valor}" ingresado no es un arreglo`);
+
+        if (valor.length === 0) return console.error(`${propiedad} "${valor}" no tiene datos`);
+
+        for (let cadena of valor) {
+            if (typeof cadena !== "string") return console.error(`El valor "${cadena}" ingresado no es una cadena de texto`);
+
+            if (cadena === "") return console.error(`El valor "${cadena}" ingresado no tiene datos`);
+        }
 
         return true;
     }
@@ -83,11 +114,39 @@ export class Pelicula {
         }
     }
 
-    validarEstreno(estreno){
-        if(this.validarNumero("Año de Estreno", estreno)){
-            if(!/^([0-9]){4}$/.test(estreno)){
+    validarEstreno(estreno) {
+        if (this.validarNumero("Año de Estreno", estreno)) {
+            if (!/^([0-9]){4}$/.test(estreno)) {
                 return console.error(`Año de Estreno '${estreno}' no es valido, debe ser un número entero de 4 dígitos.`)
             }
         }
     }
+
+    validarPais(pais) {
+        this.validarArreglo("País", pais)
+    }
+
+    validarGeneros(generos) {
+        if (this.validarArreglo("Géneros", generos)) {
+            for (let genero of generos) {
+                if (!Pelicula.listarGeneros.includes(genero)) {
+                    console.error(`Genero(s), incorrecto(s) "${generos.join(", ")}"`);
+                    Pelicula.generosAceptados();
+                }
+            }
+        }
+    }
+
+    validarCalificacion(calificacion) {
+        if (this.validarNumero("Calificación", calificacion)) {
+            return (calificacion < 0 || calificacion > 10)
+                ? console.error(`La calificación tiene que ser un número entre 0 a 10`)
+                : this.calificacion = calificacion.toFixed(1);
+        }
+    }
+
+    fichaTecnica() {
+        console.info(`Ficha Técnica:\nTítulo:"${this.titulo}"\nDirector:"${this.director}"\nAño:"${this.estreno}"\nPaís:"${this.pais.join("-")}"\nGéneros:"${this.generos.join(", ")}"\nCalificación:"${this.calificacion}"\nIMDB id:"${this.id}"`)
+    }
+
 }

@@ -76,10 +76,48 @@ convertirgrados(100, "F");
 //Ejercicios Clase 38,39,40,41,42 ya había resuelto algo parecido entonces no los hice
 
 //Ejercicios Clase 43
-const peli= new Pelicula({
+/*
+const peli = new Pelicula({
   id:"tt1234567",
   titulo:"Advengers End Game",
   director:"Anthony y Joe Russo",
-  estreno:2019
+  estreno:2019,
+  pais:["Usa","México"],
+  generos:["Action","Adult"],
+  calificacion:7.7
 });
+peli.fichaTecnica();
+*/
+
+//Ultimo punto del ejercicio
+const misPelisFavoritas = [
+  {
+    id:"tt1234567",
+    titulo:"Advengers End Game",
+    director:"Anthony y Joe Russo",
+    estreno:2019,
+    pais:["Usa","México"],
+    generos:["Action","Adult"],
+    calificacion:7.7
+  },
+  {
+    id:"tt8901234",
+    titulo:"Guerra Mundial Z",
+    director:"No se",
+    estreno:2015,
+    pais:["Usa","México"],
+    generos:["Action","Adult"],
+    calificacion:7.7
+  },
+  {
+    id:"tt5678901",
+    titulo:"Advengers End Game",
+    director:"Anthony y Joe Russo",
+    estreno:2019,
+    pais:["Usa","México"],
+    generos:["Action","Adult"],
+    calificacion:7.7
+  }
+];
+misPelisFavoritas.forEach(el => new Pelicula(el).fichaTecnica());
 
