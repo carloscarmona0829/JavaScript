@@ -17,9 +17,7 @@ export default function contdown(id, limitDay, finalMessage){
         if(limitTime < 0){
             clearInterval(countdownTempo);
             $contdwon.innerHTML = `<h3> ${finalMessage} </h3>`;    
-        }
-        
-
-        console.log(contdownDate, now, limitTime);
+        }  
+        //console.log(contdownDate, now, limitTime);
     },1000)
 }
