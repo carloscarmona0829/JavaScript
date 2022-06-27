@@ -11,7 +11,7 @@ const responsive = (e) => {
         d.getElementById(id).innerHTML = mobileContent;
     }     
 
-    console.log(breakpoint, e.matches);
+    //console.log(breakpoint, e.matches);
 };
         breakpoint.addEventListener('change',responsive);
         responsive(breakpoint);

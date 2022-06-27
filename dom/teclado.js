@@ -49,12 +49,12 @@ export function moveBall(e, ball, stage) {
 }
 
 export function shortcuts(e) {
-    console.log(e.type);
-    console.log(e.key);
-    console.log(`ctrl: ${e.ctrlKey}`);
-    console.log(`alt: ${e.altKey}`);
-    console.log(`shift: ${e.shiftKey}`);
-    console.log(e);
+    // console.log(e.type);
+    // console.log(e.key);
+    // console.log(`ctrl: ${e.ctrlKey}`);
+    // console.log(`alt: ${e.altKey}`);
+    // console.log(`shift: ${e.shiftKey}`);
+    // console.log(e);
 
     if (e.altKey && e.key === "a") {
         alert("Haz lanzado una alerta con el teclado")
