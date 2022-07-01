@@ -212,3 +212,21 @@ transition: all 0.3s ease-out;
   background-color: var(--second-color);
   color: var(--main-color);
 }
+
+/* **********     Network Status     ********** */
+.online,
+.offline{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: green;
+  color: antiquewhite;
+}
+
+.offline{
+  background-color: red;
+}
