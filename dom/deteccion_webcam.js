@@ -7,13 +7,13 @@ export function webCam(id){
         n.mediaDevices
         .getUserMedia({video:true, audio: false})
         .then((stream)=>{
-            console.log(stream);
+            //console.log(stream);
             $video.srcObject = stream;
             $video.play();
         })
         .catch((err)=>{
             $video.insertAdjacentHTML("afterend",`<p><mark>${err}</mark></p>`)
-            console.log(`Sucedio el siguiente error: ${err}`)
+            //console.log(`Sucedio el siguiente error: ${err}`)
         })
     }
 }

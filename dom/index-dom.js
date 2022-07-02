@@ -9,6 +9,9 @@ import responsiveTester from "./prueba_responsive.js";
 import { digitalClock, alarm } from "./reloj.js";
 import { moveBall, shortcuts } from "./teclado.js";
 import darkTheme from "./tema_oscuro.js";
+import getGeolocation from "./geolocalizacion.js";
+import searchFilters from "./filtro_busquedas.js";
+import draw from "./sorteo.js";
 
 const d = document;
 
@@ -23,6 +26,9 @@ d.addEventListener("DOMContentLoaded", e => {
     responsiveTester("responsive-tester");
     userDeviceInfo("user-device");
     webCam("webcam");
+    getGeolocation("geolocation");
+    searchFilters(".card-filter",".card");
+    draw("#winner-btn", ".player");
 });
 
 d.addEventListener("keydown", (e)=>{    
