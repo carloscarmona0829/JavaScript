@@ -15,6 +15,8 @@ import draw from "./sorteo.js";
 import slider from "./carrusel.js";
 import scrollSpy from "./scroll_espia.js";
 import smartVideo from "./video_inteligente.js";
+import contactFormValidations from "./validaciones_formulario.js";
+import speechReader from "./narrador.js";
 
 const d = document;
 
@@ -35,6 +37,7 @@ d.addEventListener("DOMContentLoaded", e => {
     slider();
     scrollSpy();
     smartVideo();
+    contactFormValidations();
 });
 
 d.addEventListener("keydown", (e)=>{    
@@ -45,4 +48,5 @@ d.addEventListener("keydown", (e)=>{
 //Se dejan estos métodos por fuera de los demás porque no se necesitan cargar al inicio o para usarlo en otro DOMContentLoaded
 darkTheme(".dark-theme-btn", "dark-mode")
 networkStatus();
+speechReader();
 

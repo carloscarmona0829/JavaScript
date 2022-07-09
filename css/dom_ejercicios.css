@@ -380,3 +380,83 @@ transition: all 0.3s ease-out;
 }
 
 }
+
+/* **********     ContactForm Validations     ********** */
+.contact-form {
+  --form-ok-color: #4caf50;
+  --form-error-color: #ee4747;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+.contact-form > *{ /*El * significa todos los hijos directos del elemento*/
+  padding: 0.5rem;
+  margin: 1rem auto;
+  display: block;
+  width: 100%;
+}
+
+.contact-form textarea{/*Evita que manualmente redimensionen ese control*/
+  resize: none;
+}
+
+.contact-form legend,
+.contact-form-response {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-size: 1rem;
+  font-family: sans-serif;
+}
+
+.contact-form input[type="submit"] {
+  width: 50%;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contact-form *::placeholder {
+  color: #000;
+}
+
+.contact-form [required]:valid {
+  border:thin solid var(--form-ok-color);
+}
+
+.contact-form [required]:invalid {
+  border:thin solid var(--form-error-color);
+}
+
+.contact-form-error {
+  margin-top: -1rem; /* Para que el div aparezca pegado a la caja de texto*/
+  font-size: 80%;
+  background-color: var(--form-error-color);
+  color: antiquewhite;
+  transition: all 800ms ease;
+}
+
+.contact-form-error.is-active {
+  display: block;
+  animation: show-message 1s 1 normal 0s ease-out both; /*nombre de la animación dura 1s se ejecutará 1 sola vez de forma normal que va a tener un retardo de 0s el efecto de animación es ease-out y both porque va a conservar los estilos con los que la animación finalizó*/
+}
+
+.none {
+  display: none;
+}
+
+@keyframes show-message { /*La animación anterior hace esto, inicia en cero y se va mostrando hasta llegar a 1 para hacer el efecto de aparecer*/
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
