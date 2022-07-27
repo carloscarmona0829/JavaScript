@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uploader con AJAX</title>
+    <style>
+        html {
+            box-sizing: border-box;
+            font-family: sans-serif;
+            font-size: 16px;
+        }
+
+        /*Que todos los elementos hereden el box-sizing del HTML*/
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 100vh;
+        }
+
+        progress {
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <input type="file" name="files" id="files" multiple>
+        <!-- <progress value="70" max="100"></progress>
+        70% nom_archivo.txt -->
+    </main>
+    <script>
+        const d = document,
+            $main = d.querySelector("main"),
+            $files = d.getElementById("files");
+
+        const uploader = (file) => {
+            //console.log(file);
+            const xhr = new XMLHttpRequest(),
+                formData = new FormData();//Simula la data parceada de un formulario  recibe como parámetro un formulario
+            
+                formData.append("file", file); //El append hace referencia al id para este caso "file" de cada control del formulario y file es el archivo que se recibe del control input file.
+            
+                xhr.addEventListener("readystatechange", e => {
+                if (xhr.readyState !== 4) return;
+
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    console.log(xhr.responseText);
+                    // let json = JSON.parse(xhr.responseText);
+                    // console.log(json);
+                } else {
+                    let message = xhr.statusText || "Ocurrio un error";
+                    console.error(`Error ${xhr.status}: ${message}`);
+                }
+            });
+
+            xhr.open("POST", "assets/uploader.php"); //post porque es envío de datos en este caso de un form
+            xhr.setRequestHeader("enc-type", "multipart/form-data");
+            xhr.send(formData);
+        }
+
+        // const progressUpload = (file) =>{
+            
+        // }
+
+        d.addEventListener("change", e => {
+            if (e.target === $files) {
+                //console.log(e.target.files);
+                const files = Array.from(e.target.files);//array.from me permite usar las propiedades de los iterables para recorrer un objeto que no es iterable como lo es el método files del input type="file"
+
+                files.forEach(el => uploader(el));
+            }
+        });
+
+    </script>
+</body>
+
+</html>
