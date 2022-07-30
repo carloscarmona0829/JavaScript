@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout con Stripe</title>
+    <style>
+        html {
+            box-sizing: border-box;
+            font-family: sans-serif;
+            font-size: 16px;
+        }
+
+        *,
+        *::before,
+        *::after{
+            box-sizing: inherit;
+        }
+
+        .producto {
+            display: flex;
+            flex-wrap: wrap;/*envolver para que cuando llegue al ancho 100% de cada tarjeta, los comience a filar hacia abajo*/
+        }
+
+        .producto>*{/*Todos lo elementos hijos directos de la clase productos(las <figure>)*/
+            flex: 1 1 300px;/*El primer 1 dece que si puedes aumentar, aumenta, el segundo 1 dice que si puede disminuir, disminuya y 300px el tamaño mínimo de elemento item osea el ancho de la caja porque estamos trabajando con filas*/
+            margin: 1rem;
+        }
+
+        .producto {
+            background-color: cornflowerblue;
+            color: rgb(22, 13, 6);
+            font-size: 125%;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease-out;
+        }
+
+        .producto:hover {
+            opacity: .9;
+            transform: scale(.9);
+        }
+
+        .producto img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .producto figcaption {
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Checkout con Stripe</h1>
+    <section id="productos" class="productos"></section>
+    <template id="producto-template">
+        <figure class="producto">
+            <img>
+            <figcaption></figcaption>
+        </figure>
+    </template>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="assets/stripe-checkout.js" type="module"></script>
+</body>
+</html>
