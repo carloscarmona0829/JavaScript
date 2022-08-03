@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,24 +15,28 @@
 
         *,
         *::before,
-        *::after{
+        *::after {
             box-sizing: inherit;
         }
 
         .producto {
             display: flex;
-            flex-wrap: wrap;/*envolver para que cuando llegue al ancho 100% de cada tarjeta, los comience a filar hacia abajo*/
+            flex-wrap: wrap;
+            /*envolver para que cuando llegue al ancho 100% de cada tarjeta, los comience a filar hacia abajo*/
         }
 
-        .producto>*{/*Todos lo elementos hijos directos de la clase productos(las <figure>)*/
-            flex: 1 1 300px;/*El primer 1 dece que si puedes aumentar, aumenta, el segundo 1 dice que si puede disminuir, disminuya y 300px el tamaño mínimo de elemento item osea el ancho de la caja porque estamos trabajando con filas*/
+        .producto>* {
+            /*Todos lo elementos hijos directos de la clase productos(las <figure>)*/
+            flex: 1 1 200px;
+            /*El primer 1 dece que si puedes aumentar, aumenta, el segundo 1 dice que si puede disminuir, disminuya y 300px el tamaño mínimo de elemento item osea el ancho de la caja porque estamos trabajando con filas*/
             margin: 1rem;
         }
 
         .producto {
             background-color: cornflowerblue;
-            color: rgb(22, 13, 6);
+            color: rgb(149, 235, 12);
             font-size: 125%;
+            font-style: oblique;
             text-align: center;
             cursor: pointer;
             transition: all 0.3s ease-out;
@@ -52,6 +57,7 @@
         }
     </style>
 </head>
+
 <body>
     <h1>Checkout con Stripe</h1>
     <section id="productos" class="productos"></section>
@@ -64,4 +70,5 @@
     <script src="https://js.stripe.com/v3/"></script>
     <script src="assets/stripe-checkout.js" type="module"></script>
 </body>
+
 </html>
