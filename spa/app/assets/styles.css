@@ -1,0 +1,50 @@
+html {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: inherit; /*Que herede el Box Sizing para todos los elementos del html*/
+}
+
+body{
+    margin: 0;
+    overflow-x: hidden; /*No genera barra de desplazamiento horizontal*/
+}
+
+a {
+    color: blue;
+    transition: color 0.3s ease;
+}
+
+a:hover{
+    color: deepskyblue;
+}
+
+h1 {
+    text-align: center;
+}
+
+img {
+    max-width: 100%;/*Imagenes responsivas*/
+    height: auto;
+}
+
+.error{
+    padding: 1rem;
+    font-size: 150%;
+    font-weight: bold;
+    text-align: center;
+    color: antiquewhite;
+    background-color: brown;
+}
+
+.loader {
+    margin: 1rem auto;
+    display: block;
+    width: 4rem;
+    height: 4rem;
+}
