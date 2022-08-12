@@ -42,6 +42,31 @@ img {
     background-color: brown;
 }
 
+.form-search {
+    margin: auto;
+    text-align: center;
+}
+
+.form-search input {
+    display: block;
+    margin: auto;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    font-size: 1rem ;
+}
+
+.header {
+    padding: 0.5rem;
+    position: sticky;/*Fijar al top*/
+    top: 0;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+}
+
+.header > * {/*Para cualquier elemento hijo inmediato*/
+    margin: 1rem auto;/*Aplicale margen 1rem arriba y abajo y automático a los lados*/
+}
+
 .loader {
     margin: 1rem auto;
     display: block;
