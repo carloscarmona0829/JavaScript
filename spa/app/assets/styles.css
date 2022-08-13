@@ -47,12 +47,19 @@ img {
     text-align: center;
 }
 
-.form-search input {
+.search-form input {
     display: block;
     margin: auto;
     padding: 0.25rem;
     border-radius: 0.25rem;
     font-size: 1rem ;
+}
+
+.grid-fluid {
+    margin: 1rem auto;
+    max-width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /*por cada elemento, que se autoajuste, que tenga mínimo 280px  y hasta el máximo disponible*/
 }
 
 .header {
@@ -72,4 +79,16 @@ img {
     display: block;
     width: 4rem;
     height: 4rem;
+}
+
+.post-card {
+    margin: 1rem;
+    padding: 1rem;
+    width: 80%;
+    background-color:azure;
+}
+
+.post-card p {
+    display: flex;
+    justify-content: space-between;
 }
